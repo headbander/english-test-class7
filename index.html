@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Test - Class 7 | Gerund, Infinitive & Tenses</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: #f5f5f5;
+            padding: 20px;
+            color: #333;
+        }
+
+        .test-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .test-header {
+            border-bottom: 3px double #333;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .test-header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .test-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .section {
+            margin: 30px 0;
+            page-break-inside: avoid;
+        }
+
+        .section-header {
+            background: #2c3e50;
+            color: white;
+            padding: 12px 20px;
+            margin: 25px 0 15px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .task {
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            background: #f8f9fa;
+        }
+
+        .task-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .task-points {
+            float: right;
+            background: #3498db;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+
+        .question {
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+
+        .question-number {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        input[type="text"], textarea, select {
+            border: none;
+            border-bottom: 1px solid #333;
+            padding: 5px;
+            font-family: 'Georgia', serif;
+            font-size: 16px;
+            min-width: 150px;
+            background: white;
+        }
+
+        input[type="text"]:focus, textarea:focus, select:focus {
+            outline: none;
+            border-bottom: 2px solid #3498db;
+            background: #f0f8ff;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 80px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .word-bank {
+            background: #fff3cd;
+            border: 1px dashed #856404;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .word-bank-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #856404;
+        }
+
+        .word-bank-words {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .word-chip {
+            background: white;
+            border: 1px solid #856404;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-style: italic;
+        }
+
+        .mcq-options {
+            margin: 10px 0 10px 25px;
+        }
+
+        .mcq-option {
+            display: block;
+            margin: 8px 0;
+        }
+
+        .mcq-option input[type="radio"] {
+            margin-right: 8px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        button {
+            background: #2c3e50;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: #34495e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .check-btn {
+            background: #27ae60;
+        }
+
+        .check-btn:hover {
+            background: #229954;
+        }
+
+        .solution-btn {
+            background: #3498db;
+        }
+
+        .solution-btn:hover {
+            background: #2980b9;
+        }
+
+        .hint-btn {
+            background: #f39c12;
+        }
+
+        .hint-btn:hover {
+            background: #e67e22;
+        }
+
+        .feedback {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .feedback.show {
+            display: block;
+        }
+
+        .feedback.correct {
+            background: #d4edda;
+            border: 2px solid #28a745;
+            color: #155724;
+        }
+
+        .feedback.incorrect {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+            color: #721c24;
+        }
+
+        .feedback.info {
+            background: #d1ecf1;
+            border: 2px solid #17a2b8;
+            color: #0c5460;
+        }
+
+        .score-display {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.2em;
+        }
+
+        .timer {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #2c3e50;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+
+        .timer.warning {
+            background: #e74c3c;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .writing-lines {
+            background-image: repeating-linear-gradient(
+                transparent,
+                transparent 29px,
+                #ddd 29px,
+                #ddd 30px
+            );
+            line-height: 30px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        table td, table th {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        table th {
+            background: #ecf0f1;
+            font-weight: bold;
+        }
+
+        .gap {
+            display: inline-block;
+            min-width: 120px;
+            border-bottom: 1px solid #333;
+            margin: 0 5px;
+            position: relative;
+        }
+
+        .gap input {
+            border: none;
+            border-bottom: 1px solid #333;
+            text-align: center;
+            width: 100%;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .button-group, .timer, .feedback {
+                display: none !important;
+            }
+            .test-container {
+                box-shadow: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .test-container {
+                padding: 20px;
+            }
+            .test-header h1 {
+                font-size: 22px;
+            }
+            .timer {
+                position: static;
+                margin: 20px auto;
+                width: fit-content;
+            }
+        }
+
+        .instruction-box {
+            background: #e8f4f8;
+            border-left: 5px solid #17a2b8;
+            padding: 15px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+
+        .highlight {
+            background: #ffeb3b;
+            padding: 2px 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="timer" id="timer">⏱️ 45:00</div>
+
+    <div class="test-container">
+        <div class="test-header">
+            <h1>English Class Test - Class 7</h1>
+            <h2 style="text-align: center; font-size: 18px; color: #666;">Gerund, Infinitive & Tenses</h2>
+            
+            <div class="test-info">
+                <div>
+                    <strong>Name:</strong> <input type="text" id="studentName" placeholder="Your name" style="min-width: 200px;">
+                </div>
+                <div>
+                    <strong>Date:</strong> <span id="currentDate"></span>
+                </div>
+                <div>
+                    <strong>Total Points:</strong> 100
+                </div>
+            </div>
+        </div>
+
+        <div class="instruction-box">
+            📝 <strong>Instructions:</strong> Read each question carefully. Use a pen or type your answers. You have 45 minutes. Good luck!
+        </div>
+
+        <div class="score-display" id="scoreDisplay">
+            <div>Your Score: <span id="currentScore">0</span> / 100 points</div>
+            <div style="font-size: 0.8em; margin-top: 5px;">Completed: <span id="completedTasks">0</span> / 10 tasks</div>
+        </div>
+
+        <!-- PART 1: GERUND AND INFINITIVE -->
+        <div class="section-header">PART 1: GERUND AND INFINITIVE (30 points)</div>
+
+        <!-- Task 1: Multiple Choice -->
+        <div class="task">
+            <div class="task-title">
+                Task 1: Choose the correct form
+                <span class="task-points">10 points</span>
+            </div>
+            <p style="font-style: italic; margin-bottom: 15px;">Circle the correct answer (gerund or infinitive).</p>
+            
+            <div class="question">
+                <span class="question-number">1.</span>
+                I enjoy
+                <label class="mcq-option" style="display: inline; margin: 0 10px;">
+                    <input type="radio" name="q1_1" value="a"> a) to read
+                </label>
+                <label class="mcq-option" style="display: inline; margin: 0 10px;">
+                    <input type="radio" name="q1_1" value="b"> b) reading
+                </label>
+                books in my free time.
+            </div>
+
+            <div class="question">
+                <span class="question-number">2.</span>
+                She decided
+                <label class="mcq-option" style="display: inline; margin: 0 10px;">
+                    <input type="radio" name="q1_2" value="a"> a) to learn
+                </label>
+                <label class="mcq-option" style="display: inline; margin: 0 10px;">
+                    <input type="radio" name="q1_2" value="b"> b) learning
+                </label>
+                Spanish.
+            </div>
+
+            <div class="question">
+                <span class="question-number">3.</span>
+                We finished
+                <label class="mcq-option" style="display: inline; margin: 0 10px;">
+                    <input type="radio" name="q1_3" value="a"> a) to do
+                </label>
+                <label class="mcq-option" style="display: inline; margin: 0 10px;">
+                    <input type="radio" name="q1_3" value="b"> b) doing
+                </label>
+                our homework.
+            </div>
+
+            <div class="question">
+                <span class="question-number">4.</span>
+                He wants
+                <label class="mcq-option" style="display: inline; margin: 0 10px;">
+                    <input type="radio" name="q1_4" value="a"> a) to become
+                </label>
+                <label class="mcq-option" style="display: inline; margin: 0 10px;">
+                    <input type="radio" name="q1_4" value="b"> b) becoming
+                </label>
+                a doctor.
+            </div>
+
+            <div class="question">
+                <span class="question-number">5.</span>
+                They don't mind
+                <label class="mcq-option" style="display: inline; margin: 0 10px;">
+                    <input type="radio" name="q1_5" value="a"> a) to wait
+                </label>
+                <label class="mcq-option" style="display: inline; margin: 0 10px;">
+                    <input type="radio" name="q1_5" value="b"> b) waiting
+                </label>
+                for us.
+            </div>
+
+            <div class="button-group">
+                <button class="check-btn" onclick="checkTask1()">✓ Check Answers</button>
+                <button class="solution-btn" onclick="showSolution1()">📖 Show Solutions</button>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+        </div>
+
+        <!-- Task 2: Fill in the Blanks -->
+        <div class="task">
+            <div class="task-title">
+                Task 2: Complete the sentences
+                <span class="task-points">10 points</span>
+            </div>
+            <p style="font-style: italic; margin-bottom: 15px;">Use the gerund or infinitive form of the verb in brackets.</p>
+
+            <div class="question">
+                <span class="question-number">1.</span>
+                I love <input type="text" id="q2_1" placeholder="(play)"> football.
+            </div>
+
+            <div class="question">
+                <span class="question-number">2.</span>
+                She hopes <input type="text" id="q2_2" placeholder="(visit)"> Paris next summer.
+            </div>
+
+            <div class="question">
+                <span class="question-number">3.</span>
+                We avoid <input type="text" id="q2_3" placeholder="(eat)"> fast food.
+            </div>
+
+            <div class="question">
+                <span class="question-number">4.</span>
+                He refused <input type="text" id="q2_4" placeholder="(help)"> us.
+            </div>
+
+            <div class="question">
+                <span class="question-number">5.</span>
+                They spend a lot of time <input type="text" id="q2_5" placeholder="(watch)"> TV.
+            </div>
+
+            <div class="button-group">
+                <button class="check-btn" onclick="checkTask2()">✓ Check Answers</button>
+                <button class="hint-btn" onclick="showHint(2)">💡 Hint</button>
+                <button class="solution-btn" onclick="showSolution2()">📖 Show Solutions</button>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+        </div>
+
+        <!-- Task 3: Write Sentences -->
+        <div class="task">
+            <div class="task-title">
+                Task 3: Write your own sentences
+                <span class="task-points">10 points</span>
+            </div>
+            <p style="font-style: italic; margin-bottom: 15px;">Write ONE complete sentence for each verb. Use gerund or infinitive correctly.</p>
+
+            <div class="question">
+                <span class="question-number">1.</span> <strong>enjoy</strong> (+ gerund)<br>
+                <textarea id="q3_1" placeholder="Example: I enjoy swimming in the ocean."></textarea>
+            </div>
+
+            <div class="question">
+                <span class="question-number">2.</span> <strong>want</strong> (+ infinitive)<br>
+                <textarea id="q3_2" placeholder="Example: I want to travel around the world."></textarea>
+            </div>
+
+            <div class="button-group">
+                <button class="hint-btn" onclick="showHint(3)">💡 Examples</button>
+                <button class="solution-btn" onclick="showSolution3()">📖 Sample Sentences</button>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+        </div>
+
+        <!-- PART 2: TENSES -->
+        <div class="section-header">PART 2: TENSES (40 points)</div>
+
+        <!-- Task 4: Identify the Tense -->
+        <div class="task">
+            <div class="task-title">
+                Task 4: Name the tense
+                <span class="task-points">10 points</span>
+            </div>
+            <p style="font-style: italic; margin-bottom: 15px;">Write the name of the tense used in each sentence.</p>
+
+            <div class="question">
+                <span class="question-number">1.</span>
+                She <strong>is reading</strong> a book right now. → <input type="text" id="q4_1" placeholder="Tense name">
+            </div>
+
+            <div class="question">
+                <span class="question-number">2.</span>
+                They <strong>visited</strong> London last year. → <input type="text" id="q4_2" placeholder="Tense name">
+            </div>
+
+            <div class="question">
+                <span class="question-number">3.</span>
+                I <strong>have lived</strong> here for five years. → <input type="text" id="q4_3" placeholder="Tense name">
+            </div>
+
+            <div class="question">
+                <span class="question-number">4.</span>
+                We <strong>will go</strong> to the cinema tomorrow. → <input type="text" id="q4_4" placeholder="Tense name">
+            </div>
+
+            <div class="question">
+                <span class="question-number">5.</span>
+                He <strong>plays</strong> tennis every weekend. → <input type="text" id="q4_5" placeholder="Tense name">
+            </div>
+
+            <div class="button-group">
+                <button class="check-btn" onclick="checkTask4()">✓ Check Answers</button>
+                <button class="hint-btn" onclick="showHint(4)">💡 Hint</button>
+                <button class="solution-btn" onclick="showSolution4()">📖 Show Solutions</button>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+        </div>
+
+        <!-- Task 5: Fill in the Correct Form -->
+        <div class="task">
+            <div class="task-title">
+                Task 5: Complete with the correct tense
+                <span class="task-points">15 points</span>
+            </div>
+            <p style="font-style: italic; margin-bottom: 15px;">Put the verb in brackets into the correct tense.</p>
+
+            <div class="question">
+                <span class="question-number">1.</span>
+                Look! The sun <input type="text" id="q5_1" placeholder="(shine)"> brightly.
+            </div>
+
+            <div class="question">
+                <span class="question-number">2.</span>
+                Last week, I <input type="text" id="q5_2" placeholder="(buy)"> a new bike.
+            </div>
+
+            <div class="question">
+                <span class="question-number">3.</span>
+                She <input type="text" id="q5_3" placeholder="(not/finish)"> her homework yet.
+            </div>
+
+            <div class="question">
+                <span class="question-number">4.</span>
+                We usually <input type="text" id="q5_4" placeholder="(have)"> breakfast at 7 o'clock.
+            </div>
+
+            <div class="question">
+                <span class="question-number">5.</span>
+                Tomorrow, they <input type="text" id="q5_5" placeholder="(visit)"> their grandparents.
+            </div>
+
+            <div class="button-group">
+                <button class="check-btn" onclick="checkTask5()">✓ Check Answers</button>
+                <button class="hint-btn" onclick="showHint(5)">💡 Signal Words</button>
+                <button class="solution-btn" onclick="showSolution5()">📖 Show Solutions</button>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+        </div>
+
+        <!-- Task 6: Error Correction -->
+        <div class="task">
+            <div class="task-title">
+                Task 6: Find and correct the mistake
+                <span class="task-points">15 points</span>
+            </div>
+            <p style="font-style: italic; margin-bottom: 15px;">Each sentence has ONE mistake with the tense. Find it and write the correction.</p>
+
+            <div class="question">
+                <span class="question-number">1.</span>
+                She <span class="highlight">has seen</span> that movie yesterday.<br>
+                <strong>Correction:</strong> <input type="text" id="q6_1" placeholder="Write the correct form">
+            </div>
+
+            <div class="question">
+                <span class="question-number">2.</span>
+                I <span class="highlight">am knowing</span> the answer.<br>
+                <strong>Correction:</strong> <input type="text" id="q6_2" placeholder="Write the correct form">
+            </div>
+
+            <div class="question">
+                <span class="question-number">3.</span>
+                They <span class="highlight">go</span> to the beach next weekend.<br>
+                <strong>Correction:</strong> <input type="text" id="q6_3" placeholder="Write the correct form">
+            </div>
+
+            <div class="question">
+                <span class="question-number">4.</span>
+                While I <span class="highlight">did</span> my homework, the phone rang.<br>
+                <strong>Correction:</strong> <input type="text" id="q6_4" placeholder="Write the correct form">
+            </div>
+
+            <div class="question">
+                <span class="question-number">5.</span>
+                We <span class="highlight">live</span> here since 2020.<br>
+                <strong>Correction:</strong> <input type="text" id="q6_5" placeholder="Write the correct form">
+            </div>
+
+            <div class="button-group">
+                <button class="check-btn" onclick="checkTask6()">✓ Check Answers</button>
+                <button class="hint-btn" onclick="showHint(6)">💡 Hint</button>
+                <button class="solution-btn" onclick="showSolution6()">📖 Show Solutions</button>
+            </div>
+            <div class="feedback" id="feedback6"></div>
+        </div>
+
+        <!-- PART 3: MIXED TASKS -->
+        <div class="section-header">PART 3: MIXED TASKS (30 points)</div>
+
+        <!-- Task 7: Complete the Text -->
+        <div class="task">
+            <div class="task-title">
+                Task 7: Complete the email
+                <span class="task-points">15 points</span>
+            </div>
+            <p style="font-style: italic; margin-bottom: 15px;">Fill in the gaps with the correct form (gerund, infinitive, or tense).</p>
+
+            <div style="background: white; padding: 20px; border: 1px solid #ddd; margin: 15px 0;">
+                <p>Hi Sarah,</p>
+                <p style="margin-top: 10px;">
+                    How are you? I 
+                    <input type="text" id="q7_1" placeholder="(write)" style="width: 100px;">
+                    to tell you about my weekend. Yesterday, I 
+                    <input type="text" id="q7_2" placeholder="(go)" style="width: 100px;">
+                    to the cinema with my family. We 
+                    <input type="text" id="q7_3" placeholder="(watch)" style="width: 100px;">
+                    a really funny film!
+                </p>
+                <p style="margin-top: 10px;">
+                    I really enjoy 
+                    <input type="text" id="q7_4" placeholder="(spend)" style="width: 100px;">
+                    time with my family. Next weekend, we 
+                    <input type="text" id="q7_5" placeholder="(visit)" style="width: 100px;">
+                    my grandparents. I can't wait 
+                    <input type="text" id="q7_6" placeholder="(see)" style="width: 100px;">
+                    them again!
+                </p>
+                <p style="margin-top: 10px;">
+                    What about you? 
+                    <input type="text" id="q7_7" placeholder="(you/do)" style="width: 120px;">
+                    anything fun recently?
+                </p>
+                <p style="margin-top: 10px;">
+                    Write back soon!<br>
+                    Tom
+                </p>
+            </div>
+
+            <div class="button-group">
+                <button class="check-btn" onclick="checkTask7()">✓ Check Answers</button>
+                <button class="solution-btn" onclick="showSolution7()">📖 Show Solutions</button>
+            </div>
+            <div class="feedback" id="feedback7"></div>
+        </div>
+
+        <!-- Task 8: Translate -->
+        <div class="task">
+            <div class="task-title">
+                Task 8: Translation
+                <span class="task-points">15 points</span>
+            </div>
+            <p style="font-style: italic; margin-bottom: 15px;">Translate these sentences into English. Pay attention to gerund/infinitive and tenses!</p>
+
+            <div class="question">
+                <span class="question-number">1.</span>
+                Ich mag es, Musik zu hören.<br>
+                <textarea id="q8_1" placeholder="Your translation"></textarea>
+            </div>
+
+            <div class="question">
+                <span class="question-number">2.</span>
+                Sie hat gerade ihr Frühstück beendet.<br>
+                <textarea id="q8_2" placeholder="Your translation"></textarea>
+            </div>
+
+            <div class="question">
+                <span class="question-number">3.</span>
+                Wir werden nächstes Jahr nach Spanien fliegen.<br>
+                <textarea id="q8_3" placeholder="Your translation"></textarea>
+            </div>
+
+            <div class="button-group">
+                <button class="solution-btn" onclick="showSolution8()">📖 Sample Translations</button>
+            </div>
+            <div class="feedback" id="feedback8"></div>
+        </div>
+
+        <!-- Final Buttons -->
+        <div class="button-group" style="justify-content: center; margin-top: 40px;">
+            <button onclick="calculateFinalScore()" style="background: #27ae60; font-size: 18px; padding: 15px 30px;">
+                📊 Calculate Final Score
+            </button>
+            <button onclick="window.print()" style="background: #95a5a6;">
+                🖨️ Print Test
+            </button>
+            <button onclick="resetTest()" style="background: #e74c3c;">
+                🔄 Reset Test
+            </button>
+        </div>
+
+        <!-- Final Score Display -->
+        <div class="feedback" id="finalScoreDisplay" style="margin-top: 30px;"></div>
+
+    </div>
+
+    <script>
+        // Set current date
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-GB');
+
+        // Timer
+        let timeLeft = 45 * 60; // 45 minutes in seconds
+        let timerRunning = false;
+
+        function startTimer() {
+            if (!timerRunning) {
+                timerRunning = true;
+                const timerInterval = setInterval(() => {
+                    if (timeLeft <= 0) {
+                        clearInterval(timerInterval);
+                        document.getElementById('timer').textContent = "⏱️ Time's up!";
+                        alert("Time is up! Please finish your test.");
+                        return;
+                    }
+                    
+                    const minutes = Math.floor(timeLeft / 60);
+                    const seconds = timeLeft % 60;
+                    document.getElementById('timer').textContent = 
+                        `⏱️ ${minutes}:${seconds.toString().padStart(2, '0')}`;
+                    
+                    if (timeLeft <= 300) { // Last 5 minutes
+                        document.getElementById('timer').classList.add('warning');
+                    }
+                    
+                    timeLeft--;
+                }, 1000);
+            }
+        }
+
+        // Start timer when student enters name
+        document.getElementById('studentName').addEventListener('input', function() {
+            if (this.value.length > 0) {
+                startTimer();
+            }
+        });
+
+        let totalScore = 0;
+        let completedTasks = 0;
+
+        function updateScore() {
+            document.getElementById('currentScore').textContent = totalScore;
+            document.getElementById('completedTasks').textContent = completedTasks;
+        }
+
+        // TASK 1: Multiple Choice
+        function checkTask1() {
+            const answers = {
+                'q1_1': 'b', 'q1_2': 'a', 'q1_3': 'b', 
+                'q1_4': 'a', 'q1_5': 'b'
+            };
+            
+            let correct = 0;
+            let feedback = "<strong>Results:</strong><br>";
+            
+            for (let [question, correctAnswer] of Object.entries(answers)) {
+                const selected = document.querySelector(`input[name="${question}"]:checked`);
+                if (selected && selected.value === correctAnswer) {
+                    correct++;
+                    feedback += `${question.replace('q1_', '')}. ✓ Correct<br>`;
+                } else {
+                    feedback += `${question.replace('q1_', '')}. ✗ Incorrect (Correct: ${correctAnswer})<br>`;
+                }
+            }
+            
+            const points = correct * 2;
+            if (!document.getElementById('task1_scored')) {
+                totalScore += points;
+                completedTasks++;
+                updateScore();
+                const marker = document.createElement('span');
+                marker.id = 'task1_scored';
+                marker.style.display = 'none';
+                document.body.appendChild(marker);
+            }
+            
+            feedback += `<br><strong>Score: ${points}/10 points</strong>`;
+            const feedbackDiv = document.getElementById('feedback1');
+            feedbackDiv.className = 'feedback show ' + (correct === 5 ? 'correct' : 'incorrect');
+            feedbackDiv.innerHTML = feedback;
+        }
+
+        function showSolution1() {
+            const feedback = document.getElementById('feedback1');
+            feedback.className = 'feedback show info';
+            feedback.innerHTML = `
+                <strong>✅ SOLUTIONS:</strong><br><br>
+                1. <strong>b) reading</strong> – "enjoy" takes gerund<br>
+                2. <strong>a) to learn</strong> – "decide" takes infinitive<br>
+                3. <strong>b) doing</strong> – "finish" takes gerund<br>
+                4. <strong>a) to become</strong> – "want" takes infinitive<br>
+                5. <strong>b) waiting</strong> – "don't mind" takes gerund<br><br>
+                
+                <strong>📚 Rules:</strong><br>
+                <strong>Gerund (-ing):</strong> enjoy, finish, avoid, don't mind, spend time<br>
+                <strong>Infinitive (to + verb):</strong> want, decide, hope, refuse, plan
+            `;
+        }
+
+        // TASK 2: Fill in the Blanks
+        function checkTask2() {
+            const answers = {
+                'q2_1': ['playing', 'to play'],
+                'q2_2': ['to visit'],
+                'q2_3': ['eating'],
+                'q2_4': ['to help'],
+                'q2_5': ['watching']
+            };
+            
+            let correct = 0;
+            let feedback = "<strong>Results:</strong><br>";
+            
+            for (let [id, acceptedAnswers] of Object.entries(answers)) {
+                const userAnswer = document.getElementById(id).value.trim().toLowerCase();
+                if (acceptedAnswers.includes(userAnswer)) {
+                    correct++;
+                    feedback += `${id.replace('q2_', '')}. ✓ ${userAnswer} is correct!<br>`;
+                } else {
+                    feedback += `${id.replace('q2_', '')}. ✗ You wrote: "${userAnswer}" → Correct: ${acceptedAnswers[0]}<br>`;
+                }
+            }
+            
+            const points = correct * 2;
+            if (!document.getElementById('task2_scored')) {
+                totalScore += points;
+                completedTasks++;
+                updateScore();
+                const marker = document.createElement('span');
+                marker.id = 'task2_scored';
+                marker.style.display = 'none';
+                document.body.appendChild(marker);
+            }
+            
+            feedback += `<br><strong>Score: ${points}/10 points</strong>`;
+            const feedbackDiv = document.getElementById('feedback2');
+            feedbackDiv.className = 'feedback show ' + (correct === 5 ? 'correct' : 'incorrect');
+            feedbackDiv.innerHTML = feedback;
+        }
+
+        function showHint(task) {
+            const hints = {
+                2: "💡 Remember: 'love' can take both gerund and infinitive, but 'hope' and 'refuse' need infinitive, while 'avoid' and 'spend time' need gerund!",
+                3: "💡 <strong>Examples:</strong><br>enjoy: I enjoy playing video games.<br>want: I want to become a teacher.",
+                4: "💡 Look for signal words! 'right now' = Present Progressive, 'last year' = Simple Past, 'for five years' = Present Perfect, 'tomorrow' = Future, 'every weekend' = Simple Present",
+                5: "💡 <strong>Signal words:</strong><br>Look! = Present Progressive<br>Last week = Simple Past<br>yet = Present Perfect<br>usually = Simple Present<br>Tomorrow = Future",
+                6: "💡 <strong>Common mistakes:</strong><br>Present Perfect + 'yesterday' ✗<br>State verbs + -ing ✗<br>Simple Present for future ✗<br>Simple Past in 'while' clause ✗<br>'since' needs Present Perfect ✓"
+            };
+            
+            const feedback = document.getElementById(`feedback${task}`);
+            feedback.className = 'feedback show info';
+            feedback.innerHTML = hints[task] || "No hint available.";
+        }
+
+        function showSolution2() {
+            const feedback = document.getElementById('feedback2');
+            feedback.className = 'feedback show info';
+            feedback.innerHTML = `
+                <strong>✅ SOLUTIONS:</strong><br><br>
+                1. <strong>playing</strong> or <strong>to play</strong> – "love" accepts both!<br>
+                2. <strong>to visit</strong> – "hope" takes infinitive<br>
+                3. <strong>eating</strong> – "avoid" takes gerund<br>
+                4. <strong>to help</strong> – "refuse" takes infinitive<br>
+                5. <strong>watching</strong> – "spend time" takes gerund
+            `;
+        }
+
+        // TASK 3: Writing
+        function showSolution3() {
+            const feedback = document.getElementById('feedback3');
+            feedback.className = 'feedback show info';
+            feedback.innerHTML = `
+                <strong>📖 SAMPLE SENTENCES:</strong><br><br>
+                <strong>1. enjoy + gerund:</strong><br>
+                • I enjoy listening to music.<br>
+                • She enjoys cooking Italian food.<br>
+                • We enjoy playing football together.<br>
+                • They enjoy watching movies on weekends.<br><br>
+                
+                <strong>2. want + infinitive:</strong><br>
+                • I want to learn how to play guitar.<br>
+                • She wants to visit her grandmother.<br>
+                • We want to buy a new car.<br>
+                • They want to go to the beach.<br><br>
+                
+                <strong>✓ Your sentences are correct if:</strong><br>
+                • They use the correct form (gerund or infinitive)<br>
+                • They make sense<br>
+                • They are complete sentences
+            `;
+        }
+
+        // TASK 4: Identify Tense
+        function checkTask4() {
+            const answers = {
+                'q4_1': ['present progressive', 'present continuous'],
+                'q4_2': ['simple past', 'past simple'],
+                'q4_3': ['present perfect'],
+                'q4_4': ['will future', 'future', 'simple future'],
+                'q4_5': ['simple present', 'present simple']
+            };
+            
+            let correct = 0;
+            let feedback = "<strong>Results:</strong><br>";
+            
+            for (let [id, acceptedAnswers] of Object.entries(answers)) {
+                const userAnswer = document.getElementById(id).value.trim().toLowerCase();
+                const isCorrect = acceptedAnswers.some(ans => userAnswer.includes(ans));
+                
+                if (isCorrect) {
+                    correct++;
+                    feedback += `${id.replace('q4_', '')}. ✓ Correct!<br>`;
+                } else {
+                    feedback += `${id.replace('q4_', '')}. ✗ You wrote: "${userAnswer}" → Correct: ${acceptedAnswers[0]}<br>`;
+                }
+            }
+            
+            const points = correct * 2;
+            if (!document.getElementById('task4_scored')) {
+                totalScore += points;
+                completedTasks++;
+                updateScore();
+                const marker = document.createElement('span');
+                marker.id = 'task4_scored';
+                marker.style.display = 'none';
+                document.body.appendChild(marker);
+            }
+            
+            feedback += `<br><strong>Score: ${points}/10 points</strong>`;
+            const feedbackDiv = document.getElementById('feedback4');
+            feedbackDiv.className = 'feedback show ' + (correct === 5 ? 'correct' : 'incorrect');
+            feedbackDiv.innerHTML = feedback;
+        }
+
+        function showSolution4() {
+            const feedback = document.getElementById('feedback4');
+            feedback.className = 'feedback show info';
+            feedback.innerHTML = `
+                <strong>✅ SOLUTIONS:</strong><br><br>
+                1. <strong>Present Progressive</strong> (is reading) – happening now<br>
+                2. <strong>Simple Past</strong> (visited) – completed action in the past<br>
+                3. <strong>Present Perfect</strong> (have lived) – started in past, continues now<br>
+                4. <strong>Will Future</strong> (will go) – future plan<br>
+                5. <strong>Simple Present</strong> (plays) – regular habit
+            `;
+        }
+
+        // TASK 5: Tenses Fill-in
+        function checkTask5() {
+            const answers = {
+                'q5_1': ['is shining'],
+                'q5_2': ['bought'],
+                'q5_3': ["hasn't finished", "has not finished"],
+                'q5_4': ['have'],
+                'q5_5': ['will visit', 'are going to visit', "'ll visit"]
+            };
+            
+            let correct = 0;
+            let feedback = "<strong>Results:</strong><br>";
+            
+            for (let [id, acceptedAnswers] of Object.entries(answers)) {
+                const userAnswer = document.getElementById(id).value.trim().toLowerCase();
+                const isCorrect = acceptedAnswers.some(ans => userAnswer === ans);
+                
+                if (isCorrect) {
+                    correct++;
+                    feedback += `${id.replace('q5_', '')}. ✓ ${userAnswer} is correct!<br>`;
+                } else {
+                    feedback += `${id.replace('q5_', '')}. ✗ You wrote: "${userAnswer}" → Correct: ${acceptedAnswers[0]}<br>`;
+                }
+            }
+            
+            const points = correct * 3;
+            if (!document.getElementById('task5_scored')) {
+                totalScore += points;
+                completedTasks++;
+                updateScore();
+                const marker = document.createElement('span');
+                marker.id = 'task5_scored';
+                marker.style.display = 'none';
+                document.body.appendChild(marker);
+            }
+            
+            feedback += `<br><strong>Score: ${points}/15 points</strong>`;
+            const feedbackDiv = document.getElementById('feedback5');
+            feedbackDiv.className = 'feedback show ' + (correct === 5 ? 'correct' : 'incorrect');
+            feedbackDiv.innerHTML = feedback;
+        }
+
+        function showSolution5() {
+            const feedback = document.getElementById('feedback5');
+            feedback.className = 'feedback show info';
+            feedback.innerHTML = `
+                <strong>✅ SOLUTIONS:</strong><br><br>
+                1. <strong>is shining</strong> – "Look!" signals Present Progressive<br>
+                2. <strong>bought</strong> – "Last week" signals Simple Past<br>
+                3. <strong>hasn't finished</strong> – "yet" signals Present Perfect<br>
+                4. <strong>have</strong> – "usually" signals Simple Present<br>
+                5. <strong>will visit</strong> – "Tomorrow" signals Future<br><br>
+                
+                <strong>📚 Remember Signal Words!</strong><br>
+                Present Progressive: now, right now, Look!, Listen!<br>
+                Simple Past: yesterday, last week, ago<br>
+                Present Perfect: just, yet, already, for, since<br>
+                Simple Present: usually, always, often, every day<br>
+                Future: tomorrow, next week, will
+            `;
+        }
+
+        // TASK 6: Error Correction
+        function checkTask6() {
+            const answers = {
+                'q6_1': ['saw'],
+                'q6_2': ['know'],
+                'q6_3': ['will go', 'are going to go', "'ll go"],
+                'q6_4': ['was doing'],
+                'q6_5': ['have lived', 'have been living']
+            };
+            
+            let correct = 0;
+            let feedback = "<strong>Results:</strong><br>";
+            
+            for (let [id, acceptedAnswers] of Object.entries(answers)) {
+                const userAnswer = document.getElementById(id).value.trim().toLowerCase();
+                const isCorrect = acceptedAnswers.some(ans => userAnswer === ans);
+                
+                if (isCorrect) {
+                    correct++;
+                    feedback += `${id.replace('q6_', '')}. ✓ ${userAnswer} is correct!<br>`;
+                } else {
+                    feedback += `${id.replace('q6_', '')}. ✗ You wrote: "${userAnswer}" → Correct: ${acceptedAnswers[0]}<br>`;
+                }
+            }
+            
+            const points = correct * 3;
+            if (!document.getElementById('task6_scored')) {
+                totalScore += points;
+                completedTasks++;
+                updateScore();
+                const marker = document.createElement('span');
+                marker.id = 'task6_scored';
+                marker.style.display = 'none';
+                document.body.appendChild(marker);
+            }
+            
+            feedback += `<br><strong>Score: ${points}/15 points</strong>`;
+            const feedbackDiv = document.getElementById('feedback6');
+            feedbackDiv.className = 'feedback show ' + (correct === 5 ? 'correct' : 'incorrect');
+            feedbackDiv.innerHTML = feedback;
+        }
+
+        function showSolution6() {
+            const feedback = document.getElementById('feedback6');
+            feedback.className = 'feedback show info';
+            feedback.innerHTML = `
+                <strong>✅ SOLUTIONS & EXPLANATIONS:</strong><br><br>
+                
+                1. <strong>saw</strong> (not "has seen")<br>
+                → "yesterday" requires Simple Past, not Present Perfect!<br><br>
+                
+                2. <strong>know</strong> (not "am knowing")<br>
+                → "know" is a state verb, no Progressive form!<br><br>
+                
+                3. <strong>will go</strong> (not "go")<br>
+                → "next weekend" needs Future tense!<br><br>
+                
+                4. <strong>was doing</strong> (not "did")<br>
+                → "while" needs Past Progressive for ongoing action!<br><br>
+                
+                5. <strong>have lived</strong> (not "live")<br>
+                → "since 2020" needs Present Perfect for duration!
+            `;
+        }
+
+        // TASK 7: Complete the Email
+        function checkTask7() {
+            const answers = {
+                'q7_1': ['am writing', "'m writing"],
+                'q7_2': ['went'],
+                'q7_3': ['watched'],
+                'q7_4': ['spending'],
+                'q7_5': ['will visit', 'are going to visit', "'ll visit"],
+                'q7_6': ['to see'],
+                'q7_7': ['have you done', 'did you do']
+            };
+            
+            let correct = 0;
+            let feedback = "<strong>Results:</strong><br>";
+            
+            for (let [id, acceptedAnswers] of Object.entries(answers)) {
+                const userAnswer = document.getElementById(id).value.trim().toLowerCase();
+                const isCorrect = acceptedAnswers.some(ans => userAnswer === ans);
+                
+                if (isCorrect) {
+                    correct++;
+                    feedback += `${id.replace('q7_', '')}. ✓<br>`;
+                } else {
+                    feedback += `${id.replace('q7_', '')}. ✗ Correct: ${acceptedAnswers[0]}<br>`;
+                }
+            }
+            
+            const points = Math.round((correct / 7) * 15);
+            if (!document.getElementById('task7_scored')) {
+                totalScore += points;
+                completedTasks++;
+                updateScore();
+                const marker = document.createElement('span');
+                marker.id = 'task7_scored';
+                marker.style.display = 'none';
+                document.body.appendChild(marker);
+            }
+            
+            feedback += `<br><strong>Score: ${points}/15 points</strong>`;
+            const feedbackDiv = document.getElementById('feedback7');
+            feedbackDiv.className = 'feedback show ' + (correct === 7 ? 'correct' : 'incorrect');
+            feedbackDiv.innerHTML = feedback;
+        }
+
+        function showSolution7() {
+            const feedback = document.getElementById('feedback7');
+            feedback.className = 'feedback show info';
+            feedback.innerHTML = `
+                <strong>✅ COMPLETE EMAIL:</strong><br><br>
+                
+                Hi Sarah,<br><br>
+                
+                How are you? I <strong>am writing</strong> to tell you about my weekend. 
+                Yesterday, I <strong>went</strong> to the cinema with my family. We <strong>watched</strong> 
+                a really funny film!<br><br>
+                
+                I really enjoy <strong>spending</strong> time with my family. Next weekend, 
+                we <strong>will visit</strong> my grandparents. I can't wait <strong>to see</strong> them again!<br><br>
+                
+                What about you? <strong>Have you done</strong> anything fun recently?<br><br>
+                
+                Write back soon!<br>
+                Tom
+            `;
+        }
+
+        // TASK 8: Translation
+        function showSolution8() {
+            const feedback = document.getElementById('feedback8');
+            feedback.className = 'feedback show info';
+            feedback.innerHTML = `
+                <strong>✅ SAMPLE TRANSLATIONS:</strong><br><br>
+                
+                <strong>1. Ich mag es, Musik zu hören.</strong><br>
+                → I like listening to music.<br>
+                → I like to listen to music.<br>
+                <em>(Both are correct! "like" accepts gerund and infinitive)</em><br><br>
+                
+                <strong>2. Sie hat gerade ihr Frühstück beendet.</strong><br>
+                → She has just finished her breakfast.<br>
+                <em>("just" signals Present Perfect)</em><br><br>
+                
+                <strong>3. Wir werden nächstes Jahr nach Spanien fliegen.</strong><br>
+                → We will fly to Spain next year.<br>
+                → We are going to fly to Spain next year.<br>
+                <em>(Both future forms are correct!)</em><br><br>
+                
+                <strong>📝 Note:</strong> Your translation is correct if it has the right tense and gerund/infinitive form!
+            `;
+        }
+
+        // Final Score
+        function calculateFinalScore() {
+            const feedbackDiv = document.getElementById('finalScoreDisplay');
+            feedbackDiv.className = 'feedback show correct';
+            
+            let grade, emoji;
+            const percentage = totalScore;
+            
+            if (percentage >= 90) {
+                grade = "Excellent! (1)";
+                emoji = "🏆";
+            } else if (percentage >= 80) {
+                grade = "Very Good! (2)";
+                emoji = "⭐";
+            } else if (percentage >= 70) {
+                grade = "Good! (3)";
+                emoji = "👍";
+            } else if (percentage >= 60) {
+                grade = "Satisfactory (4)";
+                emoji = "✓";
+            } else if (percentage >= 50) {
+                grade = "Sufficient (5)";
+                emoji = "→";
+            } else {
+                grade = "Needs Improvement (6)";
+                emoji = "📚";
+            }
+            
+            feedbackDiv.innerHTML = `
+                <div style="text-align: center; font-size: 1.3em;">
+                    <div style="font-size: 3em;">${emoji}</div>
+                    <strong>FINAL SCORE: ${totalScore} / 100 points</strong><br>
+                    <div style="margin-top: 10px; font-size: 1.1em;">Grade: ${grade}</div>
+                    <div style="margin-top: 20px; font-size: 0.9em;">
+                        Completed Tasks: ${completedTasks} / 10<br>
+                        Student: ${document.getElementById('studentName').value || 'Not entered'}
+                    </div>
+                </div>
+            `;
+            
+            feedbackDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function resetTest() {
+            if (confirm("Are you sure you want to reset the entire test? All answers will be deleted!")) {
+                location.reload();
+            }
+        }
+    </script>
+</body>
+</html>
